@@ -14,6 +14,7 @@ public class TurtleObject extends GameObject {
 	public void draw(Graphics g)
 	{
 		g.drawImage(image, super.getX(), super.getY(), super.getWidth(), super.getHeight(), null);
+	
 	}
 	
 }
