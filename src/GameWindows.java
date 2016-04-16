@@ -15,23 +15,16 @@ public class GameWindows implements ActionListener, KeyListener, MouseListener, 
 	JFrame frame;
 	JPanelWindows panel;
 	private int width, height;
+	
 	KeyListener key;
 	MouseListener mouse;
 	MouseMotionListener mouseL;
-	BufferedImage background1;
-	JButton button, buttonClicked;
+	
 
-	int count;
-	private final int RED = -3920896;
-	private final int GREEN = -10450126;
-	private final int BLUE = -11981403;
-	private final int YELLOW = -1456;
-	private final int WHITE=-1052432 ;
 
 	public GameWindows() {
-		width = 800;
-		height = 600;
-		count = 0;
+		width = 500;
+		height = 240;
 	}
 
 	public static void main(String[] args) {
@@ -51,121 +44,86 @@ public class GameWindows implements ActionListener, KeyListener, MouseListener, 
 		panel.addMouseMotionListener(this);
 		panel.addKeyListener(this);
 
-		try {
-			background1 = ImageIO.read(this.getClass().getResourceAsStream("flyingTurtleScreen1.png"));
-
-		} catch (Exception e) {
-			System.out.println("Problem");
+		
 		}
 
-	}
+	
 
 	public int getWidth() {
-		return 800;
+		return 500;
 
 	}
 
 	public int getHeight() {
-		return 600;
+		return 224;
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
+		InputManager.mouseDragged(e);
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		InputManager.mouseMoved(e);
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-		int mouseX = e.getX();
-		int mouseY = e.getY();
-		if(panel.getCount() == 1) {
-			int mouseColor = background1.getRGB(mouseX, mouseY);
-				if(mouseColor == RED)
-					panel.setCount(2);
-				if(mouseColor == GREEN)
-					panel.setCount(3);
-				if(mouseColor == BLUE)
-					panel.setCount(4);
-				if(mouseColor == YELLOW)
-					panel.setCount(5);
-				
-		}
-		if(panel.getCount() == 2){
-			int mouseColor = background1.getRGB(mouseX, mouseY);
-		if(mouseColor == RED)
-			panel.setCount(2);
-		if(mouseColor == GREEN)
-			panel.setCount(3);
-		if(mouseColor == BLUE)
-			panel.setCount(4);
-		if(mouseColor == YELLOW)
-			panel.setCount(5);
-		if(mouseColor == WHITE)
-			panel.setCount(1);
-		}
-		else{
-			int mouseColor = background1.getRGB(mouseX, mouseY);
-			if(mouseColor == WHITE)
-				panel.setCount(1);
-			}
+		// TODO Auto-generated method 
+		InputManager.mouseClicked(e);
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (panel.getCount() == 0)
-			panel.setCount(1);
+		InputManager.mousePressed(e);
 
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-	
+		InputManager.mouseReleased(e);
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		InputManager.mouseEntered(e);
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-	
+		InputManager.mouseExited(e);
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-	
+		InputManager.keyTyped(e);
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		InputManager.keyPressed(e);
+		 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-	
+		InputManager.keyReleased(e);
+		 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		InputManager.actionPerformed(e);
 	}
 
 }
