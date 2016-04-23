@@ -7,14 +7,14 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
-public  class InputManager {
-	
+import javax.swing.JFrame;
+
+public  class InputManager  {
 	
 
 	public static boolean LEFT_ARROW_KEY = false;
 	public static boolean RIGHT_ARROW_KEY = false;
 	public static boolean UP_ARROW_KEY = false;
-	public static boolean DOWN_ARROW_KEY = false;
 
 
 	
@@ -33,7 +33,6 @@ public  class InputManager {
 
 	public static void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	
@@ -55,51 +54,14 @@ public  class InputManager {
 	}
 
 	
-	public static void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-	
-	}
 
 	
-	public static void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		 if(e.getKeyCode() == KeyEvent.VK_LEFT){
-	   		 LEFT_ARROW_KEY = true;
-	   	 }
-		 if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-	   		 RIGHT_ARROW_KEY = true;
-	   	 }
-		 if(e.getKeyCode() == KeyEvent.VK_UP){
-	   		 UP_ARROW_KEY = true;
-	   	 }
-		 if(e.getKeyCode() == KeyEvent.VK_DOWN){
-	   		 DOWN_ARROW_KEY = true;
-	   	 }
-		 
-		 
-	}
-
-	public static void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		 if(e.getKeyCode() == KeyEvent.VK_LEFT){
-	   		 LEFT_ARROW_KEY = false;
-	   	 }
-		 if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-	   		 RIGHT_ARROW_KEY = false;
-	   	 }
-		 if(e.getKeyCode() == KeyEvent.VK_UP){
-	   		 UP_ARROW_KEY = false;
-	   	 }
-		 if(e.getKeyCode() == KeyEvent.VK_DOWN){
-	   		 DOWN_ARROW_KEY = false;
-	   	 }
-		 
-	}
+	
 
 	
 	public static void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

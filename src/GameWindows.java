@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class GameWindows implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
+public class GameWindows implements ActionListener, KeyListener {
 	JFrame frame;
 	JPanelWindows panel;
 	private int width, height;
@@ -38,11 +38,11 @@ public class GameWindows implements ActionListener, KeyListener, MouseListener, 
 		frame.setVisible(true);
 		panel = new JPanelWindows();
 		frame.add(panel);
+		panel.addKeyListener(this);
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		panel.addMouseListener(this);
-		panel.addMouseMotionListener(this);
-		panel.addKeyListener(this);
+		
+		
 
 		
 		}
@@ -57,66 +57,23 @@ public class GameWindows implements ActionListener, KeyListener, MouseListener, 
 	public int getHeight() {
 		return 224;
 	}
-
+	
 	@Override
-	public void mouseDragged(MouseEvent e) {
-		InputManager.mouseDragged(e);
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
+	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		InputManager.mouseMoved(e);
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method 
-		InputManager.mouseClicked(e);
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		InputManager.mousePressed(e);
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		InputManager.mouseReleased(e);
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		InputManager.mouseEntered(e);
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		InputManager.mouseExited(e);
+		JPanelWindows.keyPressed(e);
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		InputManager.keyTyped(e);
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		InputManager.keyPressed(e);
-		 
+		JPanelWindows.keyTyped(e);
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		InputManager.keyReleased(e);
+		JPanelWindows.keyReleased(e);
 		 
 	}
 
@@ -125,5 +82,7 @@ public class GameWindows implements ActionListener, KeyListener, MouseListener, 
 		// TODO Auto-generated method stub
 		InputManager.actionPerformed(e);
 	}
+
+	
 
 }
